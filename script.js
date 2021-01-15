@@ -5,7 +5,6 @@ input.addEventListener("keyup", function () {
 
     //get the value of the text using Regex to match valid words
     let words = input.value.match(/\b(\S+)\b/gi);
-    // let wordCount = words.length;
 
     // update and display the total number of words
     if (words) {
@@ -21,11 +20,15 @@ input.addEventListener("keyup", function () {
         document.querySelector("#wordCountDown").innerHTML = 100;
     }
 
+    //test to check for null values
+    if (!words) {
+        return
+    }
+
     // change color to red, if words are more than 100
     let countDown = 100 - words.length < 0
 
     if (countDown) {
-        console.log(countDown)
         document.querySelector("#wordCountDown").style.color = "#db0a0a";
     } else {
         document.querySelector("#wordCountDown").style.color = "#111111";
