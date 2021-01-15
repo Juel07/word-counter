@@ -22,7 +22,10 @@ input.addEventListener("keyup", function () {
     }
 
     // change color to red, if words are more than 100
-    if (100 - words.length < 0) {
+    let countDown = 100 - words.length < 0
+
+    if (countDown) {
+        console.log(countDown)
         document.querySelector("#wordCountDown").style.color = "#db0a0a";
     } else {
         document.querySelector("#wordCountDown").style.color = "#111111";
